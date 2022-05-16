@@ -1,6 +1,9 @@
 package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 func seidel(a [][]float64, b []float64) []float64 {
 	n := len(a)
@@ -39,7 +42,7 @@ func seidel(a [][]float64, b []float64) []float64 {
 	eps := 0.001
 	iter := 0
 
-	for {
+	for counter := 1; ; counter++ {
 		iter++
 
 		copy(xPrev, x)
@@ -69,6 +72,8 @@ func seidel(a [][]float64, b []float64) []float64 {
 		}
 
 		if done {
+			fmt.Println("took", counter, "iterations")
+
 			break
 		}
 	}

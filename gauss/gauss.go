@@ -81,7 +81,7 @@ func gauss(A [][]float64, b []float64) ([][]float64, [][]float64, []float64, flo
 		res := vector[i]
 
 		for j := i + 1; j < size; j++ {
-			res -= u[i][j] * vector[j]
+			res -= u[i][j] * answers[j]
 		}
 
 		answers[i] = res / u[i][i]

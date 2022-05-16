@@ -28,6 +28,16 @@ func main() {
 		}
 	}
 
+	fmt.Print("\nMatrix M:")
+
+	for i := 0; i < len(matrix); i++ {
+		fmt.Print("\n\t")
+
+		for j := 0; j < len(matrix[i]); j++ {
+			fmt.Print(strconv.FormatFloat(math.Round(m[i][j]*100)/100, 'f', -1, 64) + "\t")
+		}
+	}
+
 	fmt.Print("\n\nVector x: ")
 
 	for i := 0; i < len(matrix); i++ {
